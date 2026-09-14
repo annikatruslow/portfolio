@@ -1,0 +1,1657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="logo.png" type="image/png">
+  <title>FEAST — SSFA | Annika Truslow</title>
+
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    /* =========================================================
+       FEAST CASE STUDY
+       ========================================================= */
+
+    .feast-page {
+      padding-bottom: 8rem;
+    }
+
+    .feast-back {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 1.5rem clamp(1.5rem, 4vw, 3rem) 0;
+    }
+
+    .feast-back a {
+      color: var(--text);
+      text-decoration: none;
+      font-size: 0.82rem;
+      letter-spacing: 0.03em;
+    }
+
+    .feast-back a:hover {
+      color: var(--accent);
+    }
+
+    /* ---------- HERO ---------- */
+
+    .feast-hero {
+      max-width: 1080px;
+      margin: 3.5rem auto 0;
+      padding: 0 clamp(1.5rem, 4vw, 3rem);
+    }
+
+    .feast-hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+      gap: clamp(3rem, 7vw, 7rem);
+      align-items: center;
+    }
+
+    .feast-hero-poster {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .feast-hero-poster img {
+      display: block;
+      width: min(100%, 410px);
+      max-height: 650px;
+      object-fit: contain;
+    }
+
+    .feast-hero-copy .eyebrow {
+      margin-bottom: 1rem;
+    }
+
+    .feast-hero-copy h1 {
+      margin: 0;
+      font-family: var(--display-font);
+      font-size: clamp(4rem, 9vw, 8.5rem);
+      line-height: 0.82;
+      font-weight: 600;
+      letter-spacing: -0.055em;
+      color: var(--accent);
+    }
+
+    .feast-hero-copy .feast-subtitle {
+      margin: 1.75rem 0 0;
+      max-width: 520px;
+      font-size: clamp(1.15rem, 2vw, 1.5rem);
+      line-height: 1.45;
+    }
+
+    .feast-hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem 1.5rem;
+      margin-top: 2rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--border);
+      color: var(--secondary);
+      font-size: 0.78rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    /* ---------- GENERAL ---------- */
+
+    .feast-section {
+      max-width: 1080px;
+      margin: 9rem auto 0;
+      padding: 0 clamp(1.5rem, 4vw, 3rem);
+    }
+
+    .feast-section-heading {
+      max-width: 700px;
+      margin-bottom: 3rem;
+    }
+
+    .feast-section-heading .eyebrow {
+      margin-bottom: 0.8rem;
+    }
+
+    .feast-section-heading h2 {
+      margin: 0;
+      font-family: var(--display-font);
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      line-height: 0.95;
+      letter-spacing: -0.04em;
+      font-weight: 500;
+    }
+
+    .feast-section-heading p:last-child {
+      margin-top: 1.25rem;
+      max-width: 620px;
+      color: var(--secondary);
+      line-height: 1.7;
+    }
+
+    .feast-eyebrow,
+    .feast-page .eyebrow {
+      color: var(--accent);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    /* ---------- OVERVIEW ---------- */
+
+    .feast-overview {
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 2rem 0;
+    }
+
+    .feast-overview-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+    }
+
+    .feast-overview-item span {
+      display: block;
+      color: var(--secondary);
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 0.45rem;
+    }
+
+    .feast-overview-item strong {
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    /* ---------- IDEA ---------- */
+
+    .feast-idea {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: clamp(3rem, 8vw, 8rem);
+      align-items: start;
+    }
+
+    .feast-idea-statement {
+      font-family: var(--display-font);
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      line-height: 1.05;
+      letter-spacing: -0.035em;
+    }
+
+    .feast-idea-copy {
+      color: var(--secondary);
+      line-height: 1.8;
+    }
+
+    .feast-idea-copy p + p {
+      margin-top: 1.25rem;
+    }
+
+    /* ---------- CAMPAIGN ---------- */
+
+    .feast-campaign-intro {
+      margin-bottom: 3rem;
+    }
+
+    .feast-campaign-timeline {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .feast-campaign-step {
+      min-height: 180px;
+      padding: 1.5rem 1.25rem;
+      border-right: 1px solid var(--border);
+    }
+
+    .feast-campaign-step:last-child {
+      border-right: none;
+    }
+
+    .feast-campaign-number {
+      display: block;
+      color: var(--accent);
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      margin-bottom: 2.5rem;
+    }
+
+    .feast-campaign-step h3 {
+      margin: 0 0 0.5rem;
+      font-family: var(--display-font);
+      font-size: 1.45rem;
+      font-weight: 500;
+    }
+
+    .feast-campaign-step p {
+      margin: 0;
+      color: var(--secondary);
+      font-size: 0.82rem;
+      line-height: 1.5;
+    }
+
+    /* ---------- CAMPAIGN IMAGES ---------- */
+
+    .feast-campaign-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin-top: 3rem;
+  align-items: start;
+}
+
+.feast-campaign-gallery figure {
+  margin: 0;
+}
+
+.feast-campaign-gallery img {
+  display: block;
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+}
+
+.feast-campaign-gallery figcaption {
+  margin-top: 1rem;
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--border);
+  color: var(--secondary);
+  font-size: 0.72rem;
+  line-height: 1.5;
+}
+
+    /* ---------- COURSES ---------- */
+
+    .feast-courses {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1.25rem;
+    }
+
+    .feast-course {
+      position: relative;
+    }
+
+    .feast-course img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .feast-course-label {
+      padding-top: 0.85rem;
+    }
+
+    .feast-course-label span {
+      display: block;
+      color: var(--accent);
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 0.35rem;
+    }
+
+    .feast-course-label h3 {
+      margin: 0;
+      font-family: var(--display-font);
+      font-size: 1.35rem;
+      font-weight: 500;
+    }
+
+    /* ---------- BROCHURE ---------- */
+
+    .feast-brochure-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.5rem;
+      align-items: start;
+    }
+
+    .feast-brochure-grid figure {
+      margin: 0;
+    }
+
+    .feast-brochure-grid img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .feast-brochure-grid figcaption {
+      margin-top: 0.7rem;
+      color: var(--secondary);
+      font-size: 0.72rem;
+    }
+
+    /* ---------- VIDEO ---------- */
+
+    .feast-video-carousel {
+  position: relative;
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.feast-video-stage {
+  min-width: 0;
+}
+
+.feast-video-slide {
+  display: none;
+}
+
+.feast-video-slide.active {
+  display: block;
+}
+
+.feast-video-slide video {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: #1f1d19;
+}
+
+.feast-video-slide figcaption {
+  margin-top: 1rem;
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--border);
+  color: var(--secondary);
+  font-size: 0.72rem;
+  line-height: 1.5;
+}
+
+.feast-video-arrow {
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text);
+  font-size: 1.2rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.feast-video-arrow:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+.feast-video-counter {
+  margin-top: 1rem;
+  text-align: center;
+  color: var(--secondary);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 700px) {
+  .feast-video-carousel {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .feast-video-arrow {
+    position: absolute;
+    top: 40%;
+    z-index: 2;
+  }
+
+  .feast-video-prev {
+    left: 0.75rem;
+  }
+
+  .feast-video-next {
+    right: 0.75rem;
+  }
+}
+
+    /* ---------- PHOTOSHOOT ---------- */
+
+    .feast-production-intro {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: clamp(3rem, 7vw, 7rem);
+      align-items: start;
+      margin-bottom: 3rem;
+    }
+
+    .feast-production-intro h3 {
+      margin: 0;
+      font-family: var(--display-font);
+      font-size: clamp(2rem, 4vw, 3.25rem);
+      line-height: 1;
+      font-weight: 500;
+      letter-spacing: -0.03em;
+    }
+
+    .feast-production-intro p {
+      margin: 0;
+      color: var(--secondary);
+      line-height: 1.8;
+    }
+
+    .feast-photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.feast-photo-grid figure {
+  margin: 0;
+}
+
+.feast-photo-grid img {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  display: block;
+}
+
+    /* ---------- COPY ---------- */
+
+    .feast-copy-system {
+      border-top: 1px solid var(--border);
+    }
+
+    .feast-copy-row {
+      display: grid;
+      grid-template-columns: 0.7fr 1.3fr;
+      gap: 3rem;
+      padding: 2rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .feast-copy-row h3 {
+      margin: 0;
+      font-family: var(--display-font);
+      font-size: 1.7rem;
+      font-weight: 500;
+    }
+
+    .feast-copy-row p {
+      margin: 0;
+      color: var(--secondary);
+      line-height: 1.7;
+    }
+
+    /* ---------- LEADERSHIP ---------- */
+
+    .feast-dark-section {
+      max-width: none;
+      margin-top: 9rem;
+      padding: 7rem max(1.5rem, calc((100vw - 1080px) / 2));
+      background: var(--text);
+      color: var(--background);
+    }
+
+    .feast-dark-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    .feast-dark-section .eyebrow {
+      color: #1f1d19;
+    }
+
+    .feast-dark-section h2 {
+      max-width: 750px;
+      margin: 0.8rem 0 2rem;
+      font-family: var(--display-font);
+      font-size: clamp(2.75rem, 6vw, 5.5rem);
+      line-height: 0.95;
+      font-weight: 500;
+      letter-spacing: -0.045em;
+    }
+
+    .feast-dark-section p {
+      max-width: 700px;
+      color: #1f1d19;
+      line-height: 1.8;
+    }
+
+    .feast-leadership-points {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .feast-leadership-point h3 {
+      margin: 0 0 0.7rem;
+      font-family: var(--display-font);
+      font-size: 1.5rem;
+      font-weight: 500;
+    }
+
+    .feast-leadership-point p {
+      font-size: 0.85rem;
+      line-height: 1.65;
+    }
+
+    /* ---------- RESULTS ---------- */
+
+    .feast-results-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .feast-result {
+      padding: 2rem 1rem 2.25rem;
+      border-right: 1px solid var(--border);
+    }
+
+    .feast-result:last-child {
+      border-right: none;
+    }
+
+    .feast-result-number {
+      display: block;
+      font-family: var(--display-font);
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      line-height: 1;
+      color: var(--accent);
+      letter-spacing: -0.04em;
+    }
+
+    .feast-result-label {
+      display: block;
+      margin-top: 0.7rem;
+      color: var(--secondary);
+      font-size: 0.75rem;
+      line-height: 1.45;
+    }
+
+    /* ---------- EVENT ---------- */
+
+    .feast-event-gallery {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.25rem;
+      align-items: start;
+    }
+
+    .feast-event-gallery figure {
+      margin: 0;
+    }
+
+    .feast-event-gallery img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .feast-event-gallery .wide {
+      grid-column: span 2;
+    }
+
+    /* ---------- CLOSING ---------- */
+
+    .feast-closing {
+      max-width: 1080px;
+      margin: 10rem auto 0;
+      padding: 0 clamp(1.5rem, 4vw, 3rem);
+      text-align: center;
+    }
+
+    .feast-closing h2 {
+      margin: 0;
+      font-family: var(--display-font);
+      font-size: clamp(3rem, 8vw, 7rem);
+      line-height: 0.9;
+      font-weight: 500;
+      letter-spacing: -0.055em;
+      color: var(--accent);
+    }
+
+    .feast-closing p {
+      max-width: 520px;
+      margin: 2rem auto 0;
+      color: var(--secondary);
+      line-height: 1.7;
+    }
+
+    /* ---------- RESPONSIVE ---------- */
+
+    @media (max-width: 900px) {
+      .feast-hero-grid,
+      .feast-idea,
+      .feast-production-intro {
+        grid-template-columns: 1fr;
+      }
+
+      .feast-hero-poster {
+        justify-content: flex-start;
+      }
+
+      .feast-hero-poster img {
+        width: min(70%, 420px);
+      }
+
+      .feast-overview-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .feast-campaign-timeline {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .feast-campaign-step:nth-child(2) {
+        border-right: none;
+      }
+
+      .feast-campaign-step:nth-child(n + 3) {
+        border-top: 1px solid var(--border);
+      }
+
+      .feast-courses {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .feast-video-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .feast-leadership-points {
+        grid-template-columns: 1fr;
+      }
+
+      .feast-results-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .feast-result:nth-child(2) {
+        border-right: none;
+      }
+
+      .feast-result:nth-child(n + 3) {
+        border-top: 1px solid var(--border);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .feast-section {
+        margin-top: 6rem;
+      }
+
+      .feast-hero {
+        margin-top: 2.5rem;
+      }
+
+      .feast-hero-poster img {
+        width: min(85%, 360px);
+      }
+
+      .feast-overview-grid,
+      .feast-campaign-timeline,
+      .feast-courses,
+      .feast-brochure-grid,
+      .feast-campaign-gallery,
+      .feast-photo-grid,
+      .feast-video-grid,
+      .feast-event-gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .feast-campaign-step {
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .feast-campaign-step:last-child {
+        border-bottom: none;
+      }
+
+      .feast-campaign-step:nth-child(n + 3) {
+        border-top: none;
+      }
+
+      .feast-campaign-gallery .wide,
+      .feast-photo-grid .wide,
+      .feast-event-gallery .wide {
+        grid-column: auto;
+      }
+
+      .feast-results-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .feast-result {
+        padding: 1.5rem 0.75rem;
+      }
+
+      .feast-result-number {
+        font-size: 2.5rem;
+      }
+
+      .feast-dark-section {
+        margin-top: 6rem;
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+      }
+
+      .feast-closing {
+        margin-top: 7rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="feast-page">
+
+    <!-- BACK -->
+    <div class="feast-back">
+      <a href="index.html#portfolio">← Back to work</a>
+    </div>
+
+
+    <!-- =====================================================
+         HERO
+         ===================================================== -->
+
+    <section class="feast-hero">
+      <div class="feast-hero-grid">
+
+        <div class="feast-hero-poster">
+          <img
+            src="FEAST/Hero/FEAST%20Final%20Poster%202.PNG"
+            alt="FEAST fashion show poster"
+          >
+        </div>
+
+        <div class="feast-hero-copy">
+          <p class="eyebrow">SSFA · Campaign & Creative Direction · 2026</p>
+
+          <h1>FEAST</h1>
+
+          <p class="feast-subtitle">
+            A fashion show built around fashion's appetite for more —
+            from fast fashion and animal products to luxury and excess.
+          </p>
+
+          <div class="feast-hero-meta">
+            <span>April 26, 2026</span>
+            <span>UMass Amherst</span>
+            <span>Head Marketing Manager</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =====================================================
+         OVERVIEW
+         ===================================================== -->
+
+    <section class="feast-section">
+      <div class="feast-overview">
+
+        <div class="feast-overview-grid">
+
+          <div class="feast-overview-item">
+            <span>Role</span>
+            <strong>Head Marketing Manager</strong>
+          </div>
+
+          <div class="feast-overview-item">
+            <span>Team</span>
+            <strong>5 Marketing Assistants</strong>
+          </div>
+
+          <div class="feast-overview-item">
+            <span>Campaign</span>
+            <strong>Sep. 2025 – Apr. 2026</strong>
+          </div>
+
+          <div class="feast-overview-item">
+            <span>Tickets</span>
+            <strong>~85 Sold</strong>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =====================================================
+         THE IDEA
+         ===================================================== -->
+
+    <section class="feast-section">
+
+      <div class="feast-section-heading">
+        <p class="eyebrow">01 · The Idea</p>
+        <h2>Turn a fashion show into a dinner party.</h2>
+      </div>
+
+      <div class="feast-idea">
+
+        <div class="feast-idea-statement">
+          Fashion has an appetite for more.
+        </div>
+
+        <div class="feast-idea-copy">
+          <p>
+            FEAST was SSFA's debut fashion show, designed around the idea
+            that the fashion industry is constantly consuming — resources,
+            labor, animals, trends, and attention.
+          </p>
+
+          <p>
+            Rather than treating sustainability as a traditional educational
+            campaign, we built an entire world around a formal feast. The
+            audience was invited to sit at the table, move through four
+            courses, and confront different forms of excess along the way.
+          </p>
+
+          <p>
+            The result was a campaign where the concept wasn't just something
+            we communicated. It shaped the visual identity, copy, content
+            structure, event design, and audience experience.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =====================================================
+         CAMPAIGN STRATEGY
+         ===================================================== -->
+
+    <section class="feast-section">
+
+      <div class="feast-section-heading">
+        <p class="eyebrow">02 · Campaign Strategy</p>
+        <h2>Build anticipation before asking for the ticket.</h2>
+        <p>
+          The campaign was structured as a narrative rather than a collection
+          of promotional posts. Each phase answered a different question and
+          gradually revealed the world of FEAST.
+        </p>
+      </div>
+
+      <div class="feast-campaign-timeline">
+
+        <div class="feast-campaign-step">
+          <span class="feast-campaign-number">01</span>
+          <h3>Invitation</h3>
+          <p>Introduce the event as an exclusive invitation.</p>
+        </div>
+
+        <div class="feast-campaign-step">
+          <span class="feast-campaign-number">02</span>
+          <h3>Intrigue</h3>
+          <p>Establish the visual world without revealing everything.</p>
+        </div>
+
+        <div class="feast-campaign-step">
+          <span class="feast-campaign-number">03</span>
+          <h3>Course Reveals</h3>
+          <p>Unveil the four concepts one at a time.</p>
+        </div>
+
+        <div class="feast-campaign-step">
+          <span class="feast-campaign-number">04</span>
+          <h3>Conversion</h3>
+          <p>Shift from storytelling toward ticket purchase.</p>
+        </div>
+
+        <div class="feast-campaign-step">
+          <span class="feast-campaign-number">05</span>
+          <h3>Countdown</h3>
+          <p>Build urgency and bring the audience to the table.</p>
+        </div>
+
+      </div>
+
+
+      <div class="feast-campaign-gallery">
+
+        <figure class="wide">
+          <img
+            src="FEAST/Campaign/IMG_9547.jpg"
+            alt="FEAST campaign creative"
+            loading="lazy"
+          >
+          <figcaption>Building the visual language of the campaign.</figcaption>
+        </figure>
+
+        <figure>
+          <img
+            src="FEAST/Campaign/invitation%20v1%202.PNG"
+            alt="FEAST invitation concept"
+            loading="lazy"
+          >
+          <figcaption>The invitation established the dinner-party premise.</figcaption>
+        </figure>
+
+        <figure>
+          <img
+            src="FEAST/Campaign/Pre-Sale%20Tix%20Announcement%202.PNG"
+            alt="FEAST ticket announcement"
+            loading="lazy"
+          >
+          <figcaption>Moving from intrigue into ticket conversion.</figcaption>
+        </figure>
+
+        <figure class="wide">
+          <img
+            src="FEAST/Campaign/FEAST%20Final%20Poster%20-%209.PNG"
+            alt="FEAST final poster"
+            loading="lazy"
+          >
+          <figcaption>Final campaign poster.</figcaption>
+        </figure>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         THE FOUR COURSES
+         ===================================================== -->
+
+    <section class="feast-section">
+
+      <div class="feast-section-heading">
+        <p class="eyebrow">03 · The Menu</p>
+        <h2>Four courses. Four forms of consumption.</h2>
+      </div>
+
+      <div class="feast-courses">
+
+        <article class="feast-course">
+          <img
+            src="FEAST/Campaign/FEAST%20Course%201%20Scraps%20-%201.PNG"
+            alt="FEAST Course One: Scraps"
+            loading="lazy"
+          >
+          <div class="feast-course-label">
+            <span>Course 01</span>
+            <h3>Scraps</h3>
+          </div>
+        </article>
+
+        <article class="feast-course">
+          <img
+            src="FEAST/Campaign/FEAST%20Course%202%20The%20Butcher.PNG"
+            alt="FEAST Course Two: The Butcher"
+            loading="lazy"
+          >
+          <div class="feast-course-label">
+            <span>Course 02</span>
+            <h3>The Butcher</h3>
+          </div>
+        </article>
+
+        <article class="feast-course">
+          <img
+            src="FEAST/Campaign/FEAST%20Course%203%20Let%20Them%20Eat%20Cake.PNG"
+            alt="FEAST Course Three: Let Them Eat Cake"
+            loading="lazy"
+          >
+          <div class="feast-course-label">
+            <span>Course 03</span>
+            <h3>Let Them Eat Cake</h3>
+          </div>
+        </article>
+
+        <article class="feast-course">
+          <img
+            src="FEAST/Campaign/Group%20Edit%20Course%204%20-%2013.PNG"
+            alt="FEAST Course Four: Chef's Choice"
+            loading="lazy"
+          >
+          <div class="feast-course-label">
+            <span>Course 04</span>
+            <h3>Chef's Choice</h3>
+          </div>
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         PROGRAM / BROCHURE
+         ===================================================== -->
+
+    <section class="feast-section">
+
+      <div class="feast-section-heading">
+        <p class="eyebrow">04 · The Experience</p>
+        <h2>The concept carried through every touchpoint.</h2>
+        <p>
+          The campaign language extended beyond Instagram into the physical
+          materials guests encountered at the event.
+        </p>
+      </div>
+
+      <div class="feast-brochure-grid">
+
+        <figure>
+          <img
+            src="FEAST/Campaign/FEAST%20Trifold%20Brochure%20-%201.PNG"
+            alt="FEAST trifold brochure"
+            loading="lazy"
+          >
+          <figcaption>Front and exterior panels of the FEAST program.</figcaption>
+        </figure>
+
+        <figure>
+          <img
+            src="FEAST/Campaign/FEAST%20Trifold%20Brochure%20-%202.PNG"
+            alt="FEAST trifold brochure interior"
+            loading="lazy"
+          >
+          <figcaption>Interior program and course information.</figcaption>
+        </figure>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         MOVING IMAGE
+         ===================================================== -->
+
+         <section class="feast-section">
+            <div class="feast-section-label">Moving Image</div>
+          
+            <div class="feast-section-content">
+              <h2>FEAST in motion</h2>
+          
+              <p>
+                The campaign extended beyond static imagery through a series of short-form
+                videos that built anticipation, introduced the show's concept, and brought
+                the visual world of FEAST to life.
+              </p>
+          
+              <div class="feast-video-carousel">
+          
+                <button
+                  class="feast-video-arrow feast-video-prev"
+                  type="button"
+                  aria-label="Previous video"
+                >
+                  ←
+                </button>
+          
+                <div class="feast-video-stage">
+          
+                  <figure class="feast-video-slide active">
+                    <video controls playsinline>
+                      <source
+                        src="FEAST/Video/FEAST_Campaign.mp4"
+                        type="video/mp4"
+                      >
+                      Your browser does not support the video tag.
+                    </video>
+                    <figcaption>
+                      Campaign video — introducing the visual language and concept behind FEAST.
+                    </figcaption>
+                  </figure>
+          
+                  <figure class="feast-video-slide">
+                    <video controls playsinline>
+                      <source
+                        src="FEAST/Video/FEAST_Video_2.mp4"
+                        type="video/mp4"
+                      >
+                      Your browser does not support the video tag.
+                    </video>
+                    <figcaption>
+                      Campaign video — extending the FEAST concept through motion.
+                    </figcaption>
+                  </figure>
+          
+                  <figure class="feast-video-slide">
+                    <video controls playsinline>
+                      <source
+                        src="FEAST/Video/FEAST_Butcher.mp4"
+                        type="video/mp4"
+                      >
+                      Your browser does not support the video tag.
+                    </video>
+                    <figcaption>
+                      The Butcher — one of FEAST's four course reveals.
+                    </figcaption>
+                  </figure>
+          
+                  <figure class="feast-video-slide">
+                    <video controls playsinline>
+                      <source
+                        src="FEAST/Video/FEAST_Final.mp4"
+                        type="video/mp4"
+                      >
+                      Your browser does not support the video tag.
+                    </video>
+                    <figcaption>
+                      Final campaign video — bringing the FEAST story toward the event.
+                    </figcaption>
+                  </figure>
+          
+                  <div class="feast-video-counter">
+                    <span id="feast-video-current">1</span> / 4
+                  </div>
+          
+                </div>
+          
+                <button
+                  class="feast-video-arrow feast-video-next"
+                  type="button"
+                  aria-label="Next video"
+                >
+                  →
+                </button>
+          
+              </div>
+            </div>
+          </section>
+
+    <!-- =====================================================
+         PHOTOSHOOT / PRODUCTION
+         ===================================================== -->
+
+    <section class="feast-section">
+
+      <div class="feast-section-heading">
+        <p class="eyebrow">06 · Production</p>
+        <h2>Three shoot days. One visual system.</h2>
+      </div>
+
+      <div class="feast-production-intro">
+
+        <h3>
+          The campaign was designed as a visual library — not a single
+          photoshoot.
+        </h3>
+
+        <p>
+          I planned and coordinated three production days to create enough
+          imagery for the campaign's posters, course reveals, social content,
+          video, and event materials. Each shoot had a specific purpose while
+          still contributing to the same visual world.
+        </p>
+
+      </div>
+
+      <div class="feast-photo-grid">
+
+        <figure class="wide">
+          <img
+            src="FEAST/Photoshoot/000367040001.jpg"
+            alt="FEAST photoshoot"
+            loading="lazy"
+          >
+        </figure>
+
+        <figure>
+          <img
+            src="FEAST/Photoshoot/000367040003.jpg"
+            alt="FEAST photoshoot"
+            loading="lazy"
+          >
+        </figure>
+
+        <figure>
+          <img
+            src="FEAST/Photoshoot/000367040012.jpg"
+            alt="FEAST photoshoot"
+            loading="lazy"
+          >
+        </figure>
+
+        <figure>
+          <img
+            src="FEAST/Photoshoot/IMG_8001%20copy.jpg"
+            alt="FEAST production"
+            loading="lazy"
+          >
+        </figure>
+
+        <figure>
+          <img
+            src="FEAST/Photoshoot/IMG_8028%20copy.jpg"
+            alt="FEAST production"
+            loading="lazy"
+          >
+        </figure>
+
+        <figure class="wide">
+          <img
+            src="FEAST/Photoshoot/IMG_8140%20copy.jpg"
+            alt="FEAST photoshoot set"
+            loading="lazy"
+          >
+        </figure>
+
+        <figure>
+          <img
+            src="FEAST/Photoshoot/IMG_8222%20copy.jpg"
+            alt="FEAST photoshoot"
+            loading="lazy"
+          >
+        </figure>
+
+        <figure>
+          <img
+            src="FEAST/Photoshoot/IMG_8265%20copy.jpg"
+            alt="FEAST photoshoot"
+            loading="lazy"
+          >
+        </figure>
+
+        <figure>
+          <img
+            src="FEAST/Photoshoot/IMG_8276%20copy.jpg"
+            alt="FEAST photoshoot"
+            loading="lazy"
+          >
+        </figure>
+
+        <figure class="wide">
+          <img
+            src="FEAST/Photoshoot/IMG_8326%20copy.jpg"
+            alt="FEAST photoshoot"
+            loading="lazy"
+          >
+        </figure>
+
+        <figure>
+          <img
+            src="FEAST/Photoshoot/IMG_8337%20copy%20%281%29.jpg"
+            alt="FEAST photoshoot"
+            loading="lazy"
+          >
+        </figure>
+
+        <figure>
+          <img
+            src="FEAST/Photoshoot/IMG_8452.jpg"
+            alt="FEAST photoshoot"
+            loading="lazy"
+          >
+        </figure>
+
+        <figure>
+          <img
+            src="FEAST/Photoshoot/IMG_8455.jpg"
+            alt="FEAST photoshoot"
+            loading="lazy"
+          >
+        </figure>
+
+        <figure>
+          <img
+            src="FEAST/Photoshoot/IMG_8457.jpg"
+            alt="FEAST photoshoot"
+            loading="lazy"
+          >
+        </figure>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         COPYWRITING
+         ===================================================== -->
+
+    <section class="feast-section">
+
+      <div class="feast-section-heading">
+        <p class="eyebrow">07 · Copy & Content</p>
+        <h2>One idea, adapted across every channel.</h2>
+        <p>
+          I developed a consistent vocabulary around the FEAST concept, then
+          adapted the same core message depending on where and how the
+          audience encountered it.
+        </p>
+      </div>
+
+      <div class="feast-copy-system">
+
+        <div class="feast-copy-row">
+          <h3>Runway</h3>
+          <p>
+            Spoken language introduced each course and connected the clothing
+            to the larger argument of the show.
+          </p>
+        </div>
+
+        <div class="feast-copy-row">
+          <h3>Program</h3>
+          <p>
+            The printed menu and program gave guests more context around each
+            course and turned the concept into a physical artifact.
+          </p>
+        </div>
+
+        <div class="feast-copy-row">
+          <h3>Instagram</h3>
+          <p>
+            Social copy was shorter, more immediate, and designed to create
+            curiosity, communicate the campaign narrative, and eventually
+            drive ticket purchases.
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         LEADERSHIP
+         ===================================================== -->
+
+    <section class="feast-dark-section">
+
+      <div class="feast-dark-inner">
+
+        <p class="eyebrow">08 · Leadership</p>
+
+        <h2>
+          Turning a complicated campaign into something the team could execute.
+        </h2>
+
+        <p>
+          As Head Marketing Manager, I wasn't just developing the creative
+          direction. I was responsible for turning that direction into a
+          realistic production schedule and coordinating the people needed to
+          execute it.
+        </p>
+
+        <p>
+          Midway through the semester, the FEAST calendar collided with other
+          SSFA events and midterms. The campaign suddenly required more than
+          a post a day in several places, despite an earlier effort to avoid
+          overloading the team.
+        </p>
+
+        <p>
+          During an increasingly chaotic e-board meeting, I stepped in,
+          walked through the full content calendar post by post, sequenced
+          the campaign, and assigned work according to each person's
+          availability and workload. The co-presidents supported the plan,
+          and we left the meeting with a clear path forward.
+        </p>
+
+        <div class="feast-leadership-points">
+
+          <div class="feast-leadership-point">
+            <h3>Strategy</h3>
+            <p>
+              Built the campaign structure, content calendar, and narrative
+              progression.
+            </p>
+          </div>
+
+          <div class="feast-leadership-point">
+            <h3>Creative Direction</h3>
+            <p>
+              Developed the visual system, shoot concepts, copy framework,
+              and campaign world.
+            </p>
+          </div>
+
+          <div class="feast-leadership-point">
+            <h3>Execution</h3>
+            <p>
+              Coordinated a five-person marketing team across production,
+              social content, and event promotion.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         RESULTS
+         ===================================================== -->
+
+    <section class="feast-section">
+
+      <div class="feast-section-heading">
+        <p class="eyebrow">09 · Results</p>
+        <h2>A campaign that reached beyond the SSFA audience.</h2>
+      </div>
+
+      <div class="feast-results-grid">
+
+        <div class="feast-result">
+          <span class="feast-result-number">11.5K</span>
+          <span class="feast-result-label">
+            Instagram views on the official poster
+          </span>
+        </div>
+
+        <div class="feast-result">
+          <span class="feast-result-number">28K</span>
+          <span class="feast-result-label">
+            Combined views across four course reveals
+          </span>
+        </div>
+
+        <div class="feast-result">
+          <span class="feast-result-number">85</span>
+          <span class="feast-result-label">
+            Tickets sold
+          </span>
+        </div>
+
+        <div class="feast-result">
+          <span class="feast-result-number">#5</span>
+          <span class="feast-result-label">
+            Most-viewed SSFA Instagram post of all time
+          </span>
+        </div>
+
+      </div>
+
+      <div class="feast-campaign-gallery">
+
+        <figure>
+          <img
+            src="FEAST/Campaign/FEAST%20Course%201%20Scraps%20-%201.PNG"
+            alt="Scraps course reveal"
+            loading="lazy"
+          >
+          <figcaption>Scraps · 6.2K views · 164 likes</figcaption>
+        </figure>
+
+        <figure>
+          <img
+            src="FEAST/Campaign/FEAST%20Course%202%20The%20Butcher.PNG"
+            alt="The Butcher course reveal"
+            loading="lazy"
+          >
+          <figcaption>The Butcher · 7.4K views · 204 likes</figcaption>
+        </figure>
+
+        <figure>
+          <img
+            src="FEAST/Campaign/FEAST%20Course%203%20Let%20Them%20Eat%20Cake.PNG"
+            alt="Let Them Eat Cake course reveal"
+            loading="lazy"
+          >
+          <figcaption>Let Them Eat Cake · 8.1K views · 195 likes</figcaption>
+        </figure>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         EVENT
+         ===================================================== -->
+
+    <section class="feast-section">
+
+      <div class="feast-section-heading">
+        <p class="eyebrow">10 · The Feast</p>
+        <h2>The campaign became the event.</h2>
+        <p>
+          On April 26, the language and visual system built online became a
+          physical experience — from the menu and signage to the dinner-party
+          styling and four-course runway structure.
+        </p>
+      </div>
+
+      <div class="feast-event-gallery">
+
+        <figure class="wide">
+          <img
+            src="FEAST/Event/IMG_8667.jpg"
+            alt="FEAST fashion show"
+            loading="lazy"
+          >
+        </figure>
+
+        <figure>
+          <img
+            src="FEAST/Event/IMG_8670%20%281%29.jpg"
+            alt="FEAST fashion show"
+            loading="lazy"
+          >
+        </figure>
+
+        <figure>
+          <img
+            src="FEAST/Event/IMG_8705.jpg"
+            alt="FEAST fashion show"
+            loading="lazy"
+          >
+        </figure>
+
+        <figure>
+          <img
+            src="FEAST/Event/IMG_8714.jpg"
+            alt="FEAST fashion show"
+            loading="lazy"
+          >
+        </figure>
+
+        <figure>
+          <img
+            src="FEAST/Event/IMG_8716.jpg"
+            alt="FEAST fashion show"
+            loading="lazy"
+          >
+        </figure>
+
+        <figure class="wide">
+          <img
+            src="FEAST/Event/IMG_8720.jpg"
+            alt="FEAST fashion show"
+            loading="lazy"
+          >
+        </figure>
+
+        <figure>
+          <img
+            src="FEAST/Event/IMG_8730.jpg"
+            alt="FEAST fashion show"
+            loading="lazy"
+          >
+        </figure>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CLOSING
+         ===================================================== -->
+
+    <section class="feast-closing">
+
+      <p class="eyebrow">FEAST · April 25, 2026</p>
+
+      <h2>
+        Come hungry.
+      </h2>
+
+      <p>
+        A campaign built from strategy, creative direction, production,
+        storytelling, and a lot of moving parts — all designed to make one
+        idea impossible to miss.
+      </p>
+
+    </section>
+
+  </main>
+
+  <script>
+    const feastVideoSlides = document.querySelectorAll(".feast-video-slide");
+    const feastVideoPrev = document.querySelector(".feast-video-prev");
+    const feastVideoNext = document.querySelector(".feast-video-next");
+    const feastVideoCurrent = document.querySelector("#feast-video-current");
+  
+    let feastVideoIndex = 0;
+  
+    function showFeastVideo(index) {
+      feastVideoSlides.forEach((slide, i) => {
+        slide.classList.toggle("active", i === index);
+  
+        const video = slide.querySelector("video");
+  
+        if (i !== index) {
+          video.pause();
+          video.currentTime = 0;
+        }
+      });
+  
+      feastVideoCurrent.textContent = index + 1;
+    }
+  
+    feastVideoNext.addEventListener("click", () => {
+      feastVideoIndex =
+        (feastVideoIndex + 1) % feastVideoSlides.length;
+  
+      showFeastVideo(feastVideoIndex);
+    });
+  
+    feastVideoPrev.addEventListener("click", () => {
+      feastVideoIndex =
+        (feastVideoIndex - 1 + feastVideoSlides.length) %
+        feastVideoSlides.length;
+  
+      showFeastVideo(feastVideoIndex);
+    });
+  </script>
+
+</body>
+</html>
